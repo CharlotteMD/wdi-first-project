@@ -20,6 +20,11 @@ $(function(){
     $cctvMouth.attr('src', `./images/faces/mouth/mouth-${randomNumberMouth}.png`);
     console.log(randomNumberMouth);
 
+    setTimeout(() => {
+      $cctvEyes.attr('src', './images/other/static.png');
+      $cctvNose.attr('src', './images/other/static.png');
+      $cctvMouth.attr('src', './images/other/static.png');
+    }, 3000);
     // go back to original images after ten seconds
   });
 });
