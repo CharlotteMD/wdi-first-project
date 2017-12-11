@@ -1,21 +1,17 @@
 console.log('Ready!');
-
+$(function(){
+  const $startButton = $('.start');
+  const partsCount = 2;
+  $startButton.on('click', (event) => {
+    const randomNumber = Math.ceil(Math.random()*partsCount);
+    $('.cctv #eyes').attr('src', `./images/Faces/Eyes/eyes-${randomNumber}.png`);
+    console.log(randomNumber)
+  })
+})
 
 // event listener - click start game button - then run randomise cctv div button
 
 
-const $startButton = $('.start');
-
-$startButton.on('click', (event) => {
-  let cctvRandomise =
-  return(Math.round(Math.random()) - 0.5);});
-})
-
-// var grd = $('#grid');
-// var imgs = grd.children();
-// imgs.sort(function(){return (Math.round(Math.random()) - 0.5);});
-// grd.remove('li');
-// for(var i=0;i < imgs.length;i++) grd.append(imgs[i]);
 
 
 // CCTV Randomise means:
