@@ -6,9 +6,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="./js/script.js" charset="utf-8"></script>
   <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
 </head>
 <body>
-  <h1>Game Face</h1>
+  <h1><img src="./images/other/h1title.png" alt="Whodunit Title"></h1>
   <button type="button" name="start" class="start">Start New Game</button>
 
   <section>
@@ -28,7 +29,7 @@
       <form>
         <!-- <label for="eyes">Eyes</label> -->
         <img src="./images/icons/eye.png" alt="Eye">
-        <select id="eyes" name="eyes" placeholder="eyes">
+        <select id="eyes-select" name="eyes" placeholder="eyes">
           <option value="eyes-1">Eyes 1</option>
           <option value="eyes-2">Eyes 2</option>
           <option value="eyes-3">Eyes 3</option>
@@ -42,7 +43,7 @@
       <form>
         <!-- <label for="nose">Nose</label> -->
         <img src="./images/icons/nose.png" alt="Nose">
-        <select id="nose" name="nose" placeholder="nose">
+        <select id="nose-select" name="nose" placeholder="nose">
         <option value="nose-1">Nose 1</option>
         <option value="nose-2">Nose 2</option>
         <option value="nose-3">Nose 3</option>
@@ -56,7 +57,7 @@
       <form>
         <!-- <label for="mouth">Mouth</label> -->
         <img src="./images/icons/mouth.png" alt="Mouth">
-        <select id="mouth" name="mouth" placeholder="mouth">
+        <select id="mouth-select" name="mouth" placeholder="mouth">
         <option value="mouth-1">Mouth 1</option>
         <option value="mouth-2">Mouth 2</option>
         <option value="mouth-3">Mouth 3</option>
@@ -73,7 +74,7 @@
   </section>
 
   <div class="instructions">
-    <h3>The aim of the game is to match the mug shot with the image that you saw on the CCTV camera by selecting the correct facial features that the suspect had.</h3>
+    <h2>The aim of the game is to match the mug shot with the image that you saw on the CCTV camera by selecting the correct facial features that the suspect had.</h2>
     <p>You will see the suspect on the CCTV camera for 10 seconds on level one, 5 seconds on level 2 and 3 seconds on level 3. You need to memorise the suspects facial features in that time before the screen goes blank.<br><br>
     You will then need to draw your mugshot by selecting the correct facial features from the drop down list that will appear on the mugshot. <br><br>
     When you think your mugshot matches the suspect that you saw on the CCTV camera, press the “Accuse” button.<br><br>
