@@ -57,16 +57,21 @@ img {
   flex-wrap: wrap;
   width: 33.3%;
   border-left: 5px black solid;
+  justify-content: center;
 
 }
 
 form {
   width: 100%;
   display: flex;
+  align-items: center;
 }
 
 .selectors img {
-  width: 5px;
+  width: 50px;
+  height: 50px;
+  padding: 3px;
+  margin: 15px 5px 5px 5px;
   flex-wrap: wrap;
   align-items: left;
 }
@@ -86,6 +91,8 @@ button {
   border: 2px solid tomato;
   font-weight: bold;
   font-colour: grey;
+  padding: 5px;
+  margin 3px;
 }
 
 .instructions {

@@ -21,9 +21,9 @@ $(function(){
     console.log(randomNumberMouth);
 
     setTimeout(() => {
-      $cctvEyes.attr('src', './images/other/static.png');
-      $cctvNose.attr('src', './images/other/static.png');
-      $cctvMouth.attr('src', './images/other/static.png');
+      $cctvEyes.attr('src', './images/other/static-eyes.png');
+      $cctvNose.attr('src', './images/other/static-nose.png');
+      $cctvMouth.attr('src', './images/other/static-mouth.png');
     }, 1000);
     // go back to original images after ten seconds
   });
