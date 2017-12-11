@@ -1,0 +1,28 @@
+Pseudocode
+
+Start with what variables you will need
+Then define what functions will be needed to operate parts of the game logic
+Then have event listeners to run the game logic in order
+
+Div 1 - CCTV
+
+The game starts when the player presses the start game button.
+Event Listener - listen for start button to be clicked, then start cctv randomise function.
+The CCTV div needs to show a random combination of a suspects face made up of 3 images.
+Function 1 - create CCTV suspect - div cctv creates a random suspect from a randomised eye, nose and mouth image.
+Function 2 - show CCTV suspect - function 1 combination of facial features is shown over div 1 for ten seconds (or less for higher levels), then it disappears
+
+***Potential game bug - if you can select facial features while the CCTV image is still being shown***
+
+Div 2 - Mugshot & Div 3 - Face Selectors
+
+Event Listener - face selectors needs to be disabled until the CCTV image has disappeared
+
+Div 3 is divided into 3 selectors (more in later levels). When a selector is chosen, it changes the corresponding image on the mugshot div.
+Event Listener - when a selector is changed, the image is also changed on the mugshot div
+Submit button - winning & losing
+When the submit button is pressed, the facial features on div 1 & 2 are compared.
+Event Listener - wait for the submit button to be pressed then run the face comparison function
+Function 3 - Compare faces - eyes, nose, mouth - if they all match, run win sequence, if they dont match, run lose sequence
+Function 4 - win sequence - sound effect & prison bars fall over div 2
+Function 5 - lose sequence - sound effect, div 2 shakes & disappears
