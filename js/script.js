@@ -2,7 +2,7 @@ console.log('Ready!');
 $(function(){
 
   const $startButton = $('.start');
-  const picsCount = 2;
+  const picsCount = 8;
   const $cctvEyes = $('.cctv #eyes');
   const $cctvNose = $('.cctv #nose');
   const $cctvMouth = $('.cctv #mouth');
