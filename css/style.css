@@ -87,3 +87,12 @@ button {
   font-weight: bold;
   font-colour: grey;
 }
+
+.instructions {
+  font-family: sans-serif;
+  font-size: 11px;
+}
+
+br {
+  height: 20em;
+}
