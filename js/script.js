@@ -24,22 +24,36 @@ $(function(){
       $cctvEyes.attr('src', './images/other/static.png');
       $cctvNose.attr('src', './images/other/static.png');
       $cctvMouth.attr('src', './images/other/static.png');
-    }, 3000);
+    }, 1000);
     // go back to original images after ten seconds
   });
+
+  // When you select eyes, the matching eyes appears in mugshot div in the eyes section
+
+  const $selectEyes = $('.selectors #eyes');
+  const $selectNose = $('.selectors #nose');
+  const $selectMouth = $('.selectors #mouth');
+  const $mugEyes = $('#mugshoteyes');
+  const $mugNose = $('#mugshotnose');
+  const $mugMouth = $('#mugshotmouth');
+
+  $selectEyes.on('change', (event) => {
+    const eyeNumber = (event.target.value);
+    console.log(eyeNumber);
+    $mugEyes.attr('src', `./images/faces/eyes/${eyeNumber}.png`);
+  });
+
+  $selectNose.on('change', (event) => {
+    const noseNumber = (event.target.value);
+    console.log(noseNumber);
+    $mugNose.attr('src', `./images/faces/nose/${noseNumber}.png`);
+  });
+
+  $selectMouth.on('change', (event) => {
+    const mouthNumber = (event.target.value);
+    console.log(mouthNumber);
+    $mugMouth.attr('src', `./images/faces/mouth/${mouthNumber}.png`);
+  });
+
+
 });
-
-// event listener - click start game button - then run randomise cctv div button
-
-
-
-
-// CCTV Randomise means:
-//
-// computer needs to show a random picture from file images/faces/eyes and show it in img id slot eyes
-//
-// computer needs to show a random picture from file images/faces/nose and show it in img id slot Nose
-//
-// computer needs to show a random picture from file images/faces/mouth and show it in img id slot Mouth
-//
-// computer should show these images for 10 seconds and then show static image from file
