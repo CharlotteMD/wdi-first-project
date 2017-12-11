@@ -1,13 +1,28 @@
 console.log('Ready!');
 $(function(){
+
   const $startButton = $('.start');
-  const partsCount = 2;
-  $startButton.on('click', (event) => {
-    const randomNumber = Math.ceil(Math.random()*partsCount);
-    $('.cctv #eyes').attr('src', `./images/Faces/Eyes/eyes-${randomNumber}.png`);
-    console.log(randomNumber)
-  })
-})
+  const picsCount = 2;
+  const $cctvEyes = $('.cctv #eyes');
+  const $cctvNose = $('.cctv #nose');
+  const $cctvMouth = $('.cctv #mouth');
+
+  $startButton.on('click', () => {
+    const randomNumberEye = Math.ceil(Math.random()*picsCount);
+    $cctvEyes.attr('src', `./images/faces/eyes/eyes-${randomNumberEye}.png`);
+    console.log(randomNumberEye);
+
+    const randomNumberNose = Math.ceil(Math.random()*picsCount);
+    $cctvNose.attr('src', `./images/faces/nose/nose-${randomNumberNose}.png`);
+    console.log(randomNumberNose);
+
+    const randomNumberMouth = Math.ceil(Math.random()*picsCount);
+    $cctvMouth.attr('src', `./images/faces/mouth/mouth-${randomNumberMouth}.png`);
+    console.log(randomNumberMouth);
+
+    // go back to original images after ten seconds
+  });
+});
 
 // event listener - click start game button - then run randomise cctv div button
 
