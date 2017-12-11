@@ -1,0 +1,88 @@
+body {
+  max-width: 900px;
+
+}
+
+h1 {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: tomato;
+}
+
+section {
+  display: flex;
+  border: 5px solid black;
+  background-color: grey;
+}
+
+div {
+  align-items: center;
+  justify-content: center;
+
+}
+
+.cctv {
+  flex-wrap: wrap;
+  width: 33.3%;
+  margin: 10px;
+  border: 20px solid black;
+}
+
+
+
+
+.mugshot {
+  flex-wrap: wrap;
+  width: 33.3%;
+  margin: 10px;
+  border: 20px solid white;
+}
+
+img {
+  max-width: 275px;
+  padding: -2px;
+  margin: -2px;
+  background: grey;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.selectors {
+  flex-wrap: wrap;
+  width: 33.3%;
+  border-left: 5px black solid;
+}
+
+form {
+  width: 100%;
+  display: flex;
+}
+
+.selectors img {
+  width: 5px;
+  flex-wrap: wrap;
+  align-items: left;
+}
+
+select {
+  width: 70%;
+  align-content: space-between;
+  align-items: right;
+  padding: 10px 10px;
+  margin: 35px 0;
+}
+
+button {
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: tomato;
+  border: 2px solid tomato;
+  font-weight: bold;
+  font-colour: grey;
+}
