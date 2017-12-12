@@ -30,18 +30,19 @@ div {
   justify-content: center;
 }
 
-.cctv {
+.cctv, .mugshot {
   flex-wrap: wrap;
   width: 33.3%;
   margin: 10px;
-  border: 20px solid black;
+  border: 20px solid;
 }
 
 .mugshot {
-  flex-wrap: wrap;
-  width: 33.3%;
-  margin: 10px;
-  border: 20px solid white;
+  border-color: white;
+}
+
+.cctv {
+  border-color: black;
 }
 
 .cctv img, .mugshot img {
@@ -57,8 +58,8 @@ div {
   position: absolute;
   /*transition-duration: 3s;*/
   background: inherit;
-  animation: slide 10s down;
-  -webkit-animation: slide 10s down;
+  /*animation: slide 10s down;
+  -webkit-animation: slide 10s down;*/
   /*-webkit-animation-delay: 2s;*/*/
   /*animation-delay: 2s;*/
   /*slide animation isnt working*/
@@ -78,7 +79,6 @@ div {
   width: 33.3%;
   border-left: 5px black solid;
   justify-content: center;
-
 }
 
 form {

@@ -1,51 +1,88 @@
 console.log('Ready!');
 $(function(){
 
-  const $instructions = $('.instructions');
-  const $instr = $('.instr');
-
-
+  // BUTTONS
   const $startButton = $('.start');
-  const picsCount = 8;
+  const $instr = $('.instr');
+  const $submit = $('.submit');
+  const $refresh = $('.refresh');
+  // DIVS
+  // const $cctvDiv = $('.cctv');
+  const $mugDiv = $('.mugshot');
+  const $selectors = $('.selectors');
+  const $instructions = $('.instructions');
+  // IMGS
   const $cctvEyes = $('.cctv #eyes');
   const $cctvNose = $('.cctv #nose');
   const $cctvMouth = $('.cctv #mouth');
-  const $cctvDiv = $('.cctv');
-  const $mugDiv = $('.mugshot');
-
-  let randomNumberEye = null;
-  let randomNumberNose = null;
-  let randomNumberMouth = null;
-
-  const $selectEyes = $('.selectors #eyes-select');
-  const $selectNose = $('.selectors #nose-select');
-  const $selectMouth = $('.selectors #mouth-select');
   const $mugEyes = $('#mugshoteyes');
   const $mugNose = $('#mugshotnose');
   const $mugMouth = $('#mugshotmouth');
-
-  const $submit = $('.submit');
-
+  const $cellBars = $('#cellbars');
+  // SELECTORS
+  const $selectEyes = $('.selectors #eyes-select');
+  const $selectNose = $('.selectors #nose-select');
+  const $selectMouth = $('.selectors #mouth-select');
+  // FUNCTION ELEMENTS
+  let randomNumberEye = null;
+  let randomNumberNose = null;
+  let randomNumberMouth = null;
+  const picsCount = 8;
   let compSetEyes = null;
   let compSetNose = null;
   let compSetMouth = null;
 
-  const $cellBars = $('#cellbars');
+  const refresh = function () {
+    $cctvEyes.attr('src', './images/other/static-eyes.png');
+    $cctvNose.attr('src', './images/other/static-nose.png');
+    $cctvMouth.attr('src', './images/other/static-mouth.png');
+    $mugEyes.attr('src','./images/other/mugshot1.png');
+    $mugNose.attr('src','./images/other/mugshot2.png');
+    $mugMouth.attr('src','./images/other/mugshot3.png');
+  }
 
-  // $instr.(click,() => {
-  //     $instructions.animate({
-  //         scrollTop: $instructions.offset().top},
-  //         'slow');
-  // });
+  const loseSequence = function() {
+    alert('You lose!');
+    const laugh = new Audio('./sounds/laugh.mp3');
+    laugh.play();
+    $mugEyes.attr('src','./images/other/mugshot1.png');
+    $mugNose.attr('src','./images/other/mugshot2.png');
+    $mugMouth.attr('src','./images/other/mugshot3.png');
+    // add animation for lose sequence
+  };
+
+  const winSequence = function() {
+    alert('You win!');
+    const cell = new Audio('./sounds/cell.mp3');
+    cell.play();
+    $mugDiv.prepend('<img src="./images/other/cell-bars.png" alt="cell bars" id="cellbars">');
+    $cellBars.slideDown();
+    // animation doesnt work
+    setTimeout(() => {
+      $cctvEyes.attr('src', './images/other/static-eyes.png');
+      $cctvNose.attr('src', './images/other/static-nose.png');
+      $cctvMouth.attr('src', './images/other/static-mouth.png');
+    },
+    3000);
+  };
+
+  // BUTTON EVENT LISTENERS
 
   $instr.on('click',() => {
-    var offset = 20; //Offset of 20px
+    var offset = 20;
     $('html, body').animate({
       scrollTop: $instructions.offset().top + offset
     }, 2000);
   });
 
+  $refresh.on('click',() => {
+    refresh();
+  });
+
+  // could get rid of refresh button and just have refresh function
+
   $startButton.on('click', () => {
+    refresh();
     randomNumberEye = Math.ceil(Math.random()*picsCount);
     compSetEyes = ('eyes-' + randomNumberEye);
     $cctvEyes.attr('src',`./images/faces/eyes/eyes-${randomNumberEye}.png`);
@@ -58,10 +95,13 @@ $(function(){
     compSetMouth = ('mouth-' + randomNumberMouth);
     $cctvMouth.attr('src',`./images/faces/mouth/mouth-${randomNumberMouth}.png`);
 
+    $selectors.css('visibility', 'hidden');
+
     setTimeout(() => {
       $cctvEyes.attr('src', './images/other/static-eyes.png');
       $cctvNose.attr('src', './images/other/static-nose.png');
       $cctvMouth.attr('src', './images/other/static-mouth.png');
+      $selectors.css('visibility', 'visible');
     }, 6000);
 
     console.log('Villain is ' + compSetEyes);
@@ -70,19 +110,23 @@ $(function(){
 
   });
 
-  $selectEyes.on('change', (event) => {
+  $selectEyes.on('change', () => {
+    // checkCCTV();
+    // only run if checkCCTV is true
     const eyeNumber = (event.target.value);
     console.log('Player chose ' + eyeNumber);
     $mugEyes.attr('src', `./images/faces/eyes/${eyeNumber}.png`);
   });
 
   $selectNose.on('change', (event) => {
+    // checkCCTV();
     const noseNumber = (event.target.value);
     console.log('Player chose ' + noseNumber);
     $mugNose.attr('src', `./images/faces/nose/${noseNumber}.png`);
   });
 
   $selectMouth.on('change', (event) => {
+    // checkCCTV();
     const mouthNumber = (event.target.value);
     console.log('Player chose ' + mouthNumber);
     $mugMouth.attr('src', `./images/faces/mouth/${mouthNumber}.png`);
@@ -97,35 +141,12 @@ $(function(){
     $cctvNose.attr('src', `./images/faces/nose/nose-${randomNumberNose}.png`);
     $cctvMouth.attr('src',`./images/faces/mouth/mouth-${randomNumberMouth}.png`);
 
-
     if ((selectedEyes === compSetEyes) && (selectedNose === compSetNose) && (selectedMouth === compSetMouth)) {
-      alert('You win!');
-      const cell = new Audio('./sounds/cell.mp3');
-      cell.play();
-      $mugDiv.prepend('<img src="./images/other/cell-bars.png" alt="cell bars" id="cellbars">');
-      $cellBars.slideDown();
-      setTimeout(() => {
-        $cctvEyes.attr('src', './images/other/static-eyes.png');
-        $cctvNose.attr('src', './images/other/static-nose.png');
-        $cctvMouth.attr('src', './images/other/static-mouth.png');
-      },
-      3000);
-
+      winSequence();
     } else {
-      alert('You lose!');
-      const laugh = new Audio('./sounds/laugh.mp3');
-      laugh.play();
-      $mugEyes.attr('src','./images/other/mugshot1.png');
-      $mugNose.attr('src','./images/other/mugshot2.png');
-      $mugMouth.attr('src','./images/other/mugshot3.png');
-
-      // add sound effects
-
+      loseSequence();
     }
+
   });
-
-// Refresh button - things that need to happen
-// Mugshot stripes come back - check true, cctv camera goes static
-
 
 });
