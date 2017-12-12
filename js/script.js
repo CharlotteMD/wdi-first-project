@@ -43,7 +43,7 @@ $(function(){
       $cctvEyes.attr('src', './images/other/static-eyes.png');
       $cctvNose.attr('src', './images/other/static-nose.png');
       $cctvMouth.attr('src', './images/other/static-mouth.png');
-    }, 1000);
+    }, 6000);
 
     console.log('Villain is ' + compSetEyes);
     console.log('Villain is ' + compSetNose);
@@ -80,12 +80,12 @@ $(function(){
 
 
     if ((selectedEyes === compSetEyes) && (selectedNose === compSetNose) && (selectedMouth === compSetMouth)) {
-      console.log('You win!');
+      alert('You win!');
       // winSequence() => {
       //   ./images/other/cell-bars.png
 
     } else {
-      console.log('You lose!');
+      alert('You lose!');
       $cctvDiv.effect('shake', {direction: 'up', times: 4, distance: 10}, 1000 );
       // div shakes & face disappers back to mugshot background, possibly add sound effect
     }
