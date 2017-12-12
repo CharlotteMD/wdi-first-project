@@ -26,7 +26,7 @@ $(function(){
   let compSetNose = null;
   let compSetMouth = null;
 
-  const $cellBars = $cctvDiv.attr('src','./images/other/cell-bars.png');
+  const $cellBars = $('#cellbars');
 
 
   $startButton.on('click', () => {
@@ -83,22 +83,34 @@ $(function(){
 
 
     if ((selectedEyes === compSetEyes) && (selectedNose === compSetNose) && (selectedMouth === compSetMouth)) {
-      console.log('You win!');
-      $mugDiv.prepend('src', './images/other/cell-bars.png').slideDown();
-// ?Why isnt the file working? wrong location?
+      alert('You win!');
+      $mugDiv.prepend('<img src="./images/other/cell-bars.png" alt="cell bars" id="cellbars">');
+      $cellBars.slideDown();
+      setTimeout(() => {
+        $cctvEyes.attr('src', './images/other/static-eyes.png');
+        $cctvNose.attr('src', './images/other/static-nose.png');
+        $cctvMouth.attr('src', './images/other/static-mouth.png');
+      },
+      3000);
+
+
 
 
     } else {
       console.log('You lose!');
-      // $mugEyes.fadeOut();
+      // $mugEyes.fadeOut(); .slideDown();
       // $mugNose.fadeOut();
       // $mugMouth.fadeOut();
       $mugEyes.attr('src','./images/other/mugshot1.png');
       $mugNose.attr('src','./images/other/mugshot2.png');
-      $mugMouth.attr('src','./images/other/mugshot3.png'); 10000;
+      $mugMouth.attr('src','./images/other/mugshot3.png');
       // how do I make the mugshot appear at a delay?
 
     }
   });
+
+// Refresh button - things that need to happen
+// Mugshot stripes come back - check true, cctv camera shows randomised face
+
 
 });
