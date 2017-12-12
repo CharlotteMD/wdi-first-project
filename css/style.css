@@ -3,6 +3,18 @@ body {
   margin: 0 auto;
 }
 
+button {
+  font-family: 'Special Elite', cursive;
+  font-size: 14px;
+  background-color: tomato;
+  border: 2px solid tomato;
+  font-weight: bold;
+  font-colour: grey;
+  padding: 5px;
+  margin 3px;
+  width: 33%;
+}
+
 h1 img{
   width: 100%;
 }
@@ -16,8 +28,6 @@ section {
 div {
   align-items: center;
   justify-content: center;
-
-
 }
 
 .cctv {
@@ -26,8 +36,6 @@ div {
   margin: 10px;
   border: 20px solid black;
 }
-
-
 
 .mugshot {
   flex-wrap: wrap;
@@ -49,10 +57,11 @@ div {
   position: absolute;
   /*transition-duration: 3s;*/
   background: inherit;
-  /*-webkit-animation: slide 3s down;
-  -webkit-animation-delay: 2s;*/
-  animation: slide 3s down;
+  animation: slide 10s down;
+  -webkit-animation: slide 10s down;
+  /*-webkit-animation-delay: 2s;*/*/
   /*animation-delay: 2s;*/
+  /*slide animation isnt working*/
 }
 
 /*@-webkit-keyframes slide {
@@ -95,17 +104,8 @@ select {
   margin: 35px 0;
 }
 
-button {
-  flex-wrap: wrap;
-  font-family: 'Special Elite', cursive;
-  font-size: 14px;
+button.submit  {
   width: 100%;
-  background-color: tomato;
-  border: 2px solid tomato;
-  font-weight: bold;
-  font-colour: grey;
-  padding: 5px;
-  margin 3px;
 }
 
 .instructions {

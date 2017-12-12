@@ -1,6 +1,10 @@
 console.log('Ready!');
 $(function(){
 
+  const $instructions = $('.instructions');
+  const $instr = $('.instr');
+
+
   const $startButton = $('.start');
   const picsCount = 8;
   const $cctvEyes = $('.cctv #eyes');
@@ -28,6 +32,18 @@ $(function(){
 
   const $cellBars = $('#cellbars');
 
+  // $instr.(click,() => {
+  //     $instructions.animate({
+  //         scrollTop: $instructions.offset().top},
+  //         'slow');
+  // });
+
+  $instr.on('click',() => {
+    var offset = 20; //Offset of 20px
+    $('html, body').animate({
+      scrollTop: $instructions.offset().top + offset
+    }, 2000);
+  });
 
   $startButton.on('click', () => {
     randomNumberEye = Math.ceil(Math.random()*picsCount);
@@ -84,6 +100,8 @@ $(function(){
 
     if ((selectedEyes === compSetEyes) && (selectedNose === compSetNose) && (selectedMouth === compSetMouth)) {
       alert('You win!');
+      const cell = new Audio('./sounds/cell.mp3');
+      cell.play();
       $mugDiv.prepend('<img src="./images/other/cell-bars.png" alt="cell bars" id="cellbars">');
       $cellBars.slideDown();
       setTimeout(() => {
@@ -93,24 +111,21 @@ $(function(){
       },
       3000);
 
-
-
-
     } else {
-      console.log('You lose!');
-      // $mugEyes.fadeOut(); .slideDown();
-      // $mugNose.fadeOut();
-      // $mugMouth.fadeOut();
+      alert('You lose!');
+      const laugh = new Audio('./sounds/laugh.mp3');
+      laugh.play();
       $mugEyes.attr('src','./images/other/mugshot1.png');
       $mugNose.attr('src','./images/other/mugshot2.png');
       $mugMouth.attr('src','./images/other/mugshot3.png');
-      // how do I make the mugshot appear at a delay?
+
+      // add sound effects
 
     }
   });
 
 // Refresh button - things that need to happen
-// Mugshot stripes come back - check true, cctv camera shows randomised face
+// Mugshot stripes come back - check true, cctv camera goes static
 
 
 });
