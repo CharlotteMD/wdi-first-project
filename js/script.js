@@ -5,7 +5,7 @@ $(function(){
   const $startButton = $('.start');
   const $instr = $('.instr');
   const $submit = $('.submit');
-  const $refresh = $('.refresh');
+  // const $refresh = $('.refresh');
   // DIVS
   // const $cctvDiv = $('.cctv');
   const $mugDiv = $('.mugshot');
@@ -39,7 +39,7 @@ $(function(){
     $mugEyes.attr('src','./images/other/mugshot1.png');
     $mugNose.attr('src','./images/other/mugshot2.png');
     $mugMouth.attr('src','./images/other/mugshot3.png');
-  }
+  };
 
   const loseSequence = function() {
     alert('You lose!');
@@ -75,12 +75,6 @@ $(function(){
     }, 2000);
   });
 
-  $refresh.on('click',() => {
-    refresh();
-  });
-
-  // could get rid of refresh button and just have refresh function
-
   $startButton.on('click', () => {
     refresh();
     randomNumberEye = Math.ceil(Math.random()*picsCount);
@@ -111,22 +105,18 @@ $(function(){
   });
 
   $selectEyes.on('change', () => {
-    // checkCCTV();
-    // only run if checkCCTV is true
     const eyeNumber = (event.target.value);
     console.log('Player chose ' + eyeNumber);
     $mugEyes.attr('src', `./images/faces/eyes/${eyeNumber}.png`);
   });
 
   $selectNose.on('change', (event) => {
-    // checkCCTV();
     const noseNumber = (event.target.value);
     console.log('Player chose ' + noseNumber);
     $mugNose.attr('src', `./images/faces/nose/${noseNumber}.png`);
   });
 
   $selectMouth.on('change', (event) => {
-    // checkCCTV();
     const mouthNumber = (event.target.value);
     console.log('Player chose ' + mouthNumber);
     $mugMouth.attr('src', `./images/faces/mouth/${mouthNumber}.png`);
