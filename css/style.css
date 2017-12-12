@@ -78,7 +78,8 @@ div {
   flex-wrap: wrap;
   width: 33.3%;
   border-left: 5px black solid;
-  justify-content: center;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
 form {
