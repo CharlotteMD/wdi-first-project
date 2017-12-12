@@ -93,21 +93,31 @@ button {
 }
 
 .instructions {
-  font-family: 'Merriweather', serif;
-  font-size: 11px;
+  font-family: 'Special Elite', cursive;
+  font-size: 13px;
   text-align: center;
   padding: 10px;
   margin: 10px;
+  background-color: grey;
+  border: thick black solid;
 }
 
 h2 {
-  font-family: 'Special Elite', cursive;
+  font-family: 'Abril Fatface', cursive;
   background: dodgerblue;
-  border-radius: 20%;
+  border-radius: 3%;
   color: white;
   padding: 10px;
   margin: 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
 
+p {
+  padding: 25px;
+  text-align: justify;
+  background: white;
+  border-radius: 3%;
 }
 
 br {
