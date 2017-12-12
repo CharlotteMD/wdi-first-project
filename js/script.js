@@ -7,6 +7,7 @@ $(function(){
   const $cctvNose = $('.cctv #nose');
   const $cctvMouth = $('.cctv #mouth');
   const $cctvDiv = $('.cctv');
+  const $mugDiv = $('.mugshot');
 
   let randomNumberEye = null;
   let randomNumberNose = null;
@@ -83,13 +84,19 @@ $(function(){
 
     if ((selectedEyes === compSetEyes) && (selectedNose === compSetNose) && (selectedMouth === compSetMouth)) {
       console.log('You win!');
-      $cellBars.slideDown();
+      $mugDiv.prepend('src', './images/other/cell-bars.png').slideDown();
+// ?Why isnt the file working? wrong location?
+
 
     } else {
       console.log('You lose!');
+      // $mugEyes.fadeOut();
+      // $mugNose.fadeOut();
+      // $mugMouth.fadeOut();
       $mugEyes.attr('src','./images/other/mugshot1.png');
       $mugNose.attr('src','./images/other/mugshot2.png');
       $mugMouth.attr('src','./images/other/mugshot3.png'); 10000;
+      // how do I make the mugshot appear at a delay?
 
     }
   });

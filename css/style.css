@@ -1,11 +1,10 @@
 body {
   max-width: 900px;
-  justify-content: center;
+  margin: 0 auto;
 }
 
 h1 img{
   width: 100%;
-  justify-content: center;
 }
 
 section {
@@ -37,7 +36,7 @@ div {
   border: 20px solid white;
 }
 
-img {
+.cctv img, .mugshot img {
   max-width: 275px;
   padding: -2px;
   margin: -2px;
