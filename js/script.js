@@ -25,6 +25,8 @@ $(function(){
   let compSetNose = null;
   let compSetMouth = null;
 
+  const $cellBars = $cctvDiv.attr('src','./images/other/cell-bars.png');
+
 
   $startButton.on('click', () => {
     randomNumberEye = Math.ceil(Math.random()*picsCount);
@@ -80,14 +82,15 @@ $(function(){
 
 
     if ((selectedEyes === compSetEyes) && (selectedNose === compSetNose) && (selectedMouth === compSetMouth)) {
-      alert('You win!');
-      // winSequence() => {
-      //   ./images/other/cell-bars.png
+      console.log('You win!');
+      $cellBars.slideDown();
 
     } else {
-      alert('You lose!');
-      $cctvDiv.effect('shake', {direction: 'up', times: 4, distance: 10}, 1000 );
-      // div shakes & face disappers back to mugshot background, possibly add sound effect
+      console.log('You lose!');
+      $mugEyes.attr('src','./images/other/mugshot1.png');
+      $mugNose.attr('src','./images/other/mugshot2.png');
+      $mugMouth.attr('src','./images/other/mugshot3.png'); 10000;
+
     }
   });
 
