@@ -14,6 +14,7 @@ $(function(){
   const $timer = $('.time');
   const $watch = $('.watch');
   const $score = $('.level');
+  const $finish = $('.finish');
   // IMGS
   const $cctvEyes = $('.cctv #eyes');
   const $cctvNose = $('.cctv #nose');
@@ -35,7 +36,7 @@ $(function(){
   let compSetNose = null;
   let compSetMouth = null;
   const picsCount = 8;
-  let timeRemaining = 10;
+  let timeRemaining = 30;
   let timerId = null;
   let score = 0;
 
@@ -61,7 +62,7 @@ $(function(){
 
   const refresh = function () {
     nextSuspect();
-    timeRemaining = 10;
+    timeRemaining = 30;
     // this doesnt stop the timer?
   };
 
@@ -159,11 +160,25 @@ $(function(){
       if(timeRemaining === 0) {
         clearInterval(timerId);
         $watch.addClass('ringing');
+        // setFinishDiv();
+        finish();
       }
     }, 1000);
   };
 
-  // const score = log every time win sequence runs, put number in $score on watch
+  // stop game when timer gets to zero, show a div which displays score
+
+  const finish = function() {
+    $selectors.css('visibility', 'hidden');
+    $finish.css('visibility', 'visible');
+  };
+
+  // const setFinishDiv = function() {
+  //
+  // };
+
+// need to put selectors visible again when game is restarted.
+
 
   // BUTTON EVENT LISTENERS
   $instr.on('click',() => {
@@ -215,7 +230,7 @@ $(function(){
     } else {
       loseSequence();
     }
-
   });
+
 
 });
