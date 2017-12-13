@@ -11,6 +11,9 @@ $(function(){
   const $mugDiv = $('.mugshot');
   const $selectors = $('.selectors');
   const $instructions = $('.instructions');
+  const $timer = $('.time');
+  const $watch = $('.watch');
+  const $score = $('.level');
   // IMGS
   const $cctvEyes = $('.cctv #eyes');
   const $cctvNose = $('.cctv #nose');
@@ -33,6 +36,9 @@ $(function(){
   let compSetNose = null;
   let compSetMouth = null;
 
+  let timeRemaining = 60;
+  let timerId = null;
+
   const refresh = function () {
     $cctvEyes.attr('src', './images/other/static-eyes.png');
     $cctvNose.attr('src', './images/other/static-nose.png');
@@ -42,7 +48,7 @@ $(function(){
     $mugMouth.attr('src','./images/other/mugshot3.png');
     $cellBars.css('visibility', 'hidden');
     $villain.css('visibility', 'hidden');
-    // get rid of cellBars & villain 
+    // get rid of cellBars & villain
   };
 
   const loseSequence = function() {
@@ -90,6 +96,18 @@ $(function(){
     3000);
   };
 
+  function startTimer() {
+    timerId = setInterval(() => {
+      timeRemaining--;
+      $timer.text(timeRemaining);
+
+      if(timeRemaining === 0) {
+        clearInterval(timerId);
+        $watch.addClass('ringing');
+      }
+    }, 1000);
+  }
+
   // BUTTON EVENT LISTENERS
 
   $instr.on('click',() => {
@@ -112,6 +130,8 @@ $(function(){
     randomNumberMouth = Math.ceil(Math.random()*picsCount);
     compSetMouth = ('mouth-' + randomNumberMouth);
     $cctvMouth.attr('src',`./images/faces/mouth/mouth-${randomNumberMouth}.png`);
+
+    startTimer();
 
     $selectors.css('visibility', 'hidden');
 
