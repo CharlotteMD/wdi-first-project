@@ -63,7 +63,7 @@ $(function(){
   const refresh = function () {
     nextSuspect();
     timeRemaining = 30;
-    // this doesnt stop the timer?
+    score = 0;
   };
 
   const nextSuspect = function () {
@@ -128,7 +128,7 @@ $(function(){
   };
 
   const loseSequence = function() {
-    alert('You lose!');
+    // alert('You lose!');
     laugh.play();
     // resetMugDiv();
     escapeSequence();
@@ -140,7 +140,7 @@ $(function(){
   };
 
   const winSequence = function() {
-    alert('You win!');
+    // alert('You win!');
     cellAudio.play();
     captureSequence();
     setTimeout(() => {
@@ -148,7 +148,6 @@ $(function(){
     }, 3000);
     score++;
     progress();
-    // make the whole game stop when you get to 0 seconds
   };
 
   const startTimer = function() {
@@ -159,26 +158,18 @@ $(function(){
 
       if(timeRemaining === 0) {
         clearInterval(timerId);
-        $watch.addClass('ringing');
+        // $watch.addClass('ringing');
         finish();
         alert(`Time is up! You put ${score} villains in prison!`);
+        refresh();
       }
     }, 1000);
   };
-
-  // stop game when timer gets to zero, show a div which displays score
 
   const finish = function() {
     $selectors.css('visibility', 'hidden');
     // $finish.css('visibility', 'visible');
   };
-
-  // const setFinishDiv = function() {
-  //   <p>You put X villains in prison!</p>
-  // };
-
-// need to put selectors visible again when game is restarted.
-
 
   // BUTTON EVENT LISTENERS
   $instr.on('click',() => {
