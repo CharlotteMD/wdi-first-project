@@ -20,8 +20,7 @@ header {
 }
 
 h1 img {
-  flex-wrap: wrap;
-  width: 70%;
+  width: 90%;
 }
 
 .watch img {
@@ -34,22 +33,21 @@ h1 img {
 
 .info-level-time {
   background-image: url(../images/other/timer.png);
-  z-index: 100;
   justify-content: center;
-  width: 110px;
-  height: 110px;
+  width: 175px;
+  height: 200px;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-.level{margin: 67px 37px}
-.time{margin: 40px 38px }
+.time{margin: 69px 73px }
+.level{margin: 111px 70px}
+
 .level, .time{
   position: absolute;
-  z-index: 99;
   font-size: 12 px
   font-family: 'Special Elite', cursive;
-  color: green;
+  color: white;
   background-color: inherit;
   padding:0;
 }
