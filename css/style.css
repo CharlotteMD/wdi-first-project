@@ -3,24 +3,14 @@ body {
   margin: 0 auto;
 }
 
-button {
-  font-family: 'Special Elite', cursive;
-  font-size: 14px;
-  background-color: tomato;
-  border: 2px solid tomato;
-  font-weight: bold;
-  font-colour: grey;
-  padding: 5px;
-  margin: 3px;
-  width: 30%;
-}
-
 header {
   display: flex;
+  margin-top: 10px;
 }
 
 h1 img {
-  width: 90%;
+  height: 125px;
+  width: auto;
 }
 
 .watch img {
@@ -46,7 +36,7 @@ h1 img {
 .level, .time{
   position: absolute;
   font-size: 12 px
-  font-family: 'Special Elite', cursive;
+  font-family: "Special Elite", cursive;
   color: white;
   background-color: inherit;
   padding:0;
@@ -56,6 +46,18 @@ section {
   display: flex;
   border: 5px solid black;
   background-color: grey;
+}
+
+button {
+  font-family: 'Special Elite', cursive;
+  font-size: 14px;
+  background-color: tomato;
+  border: 2px solid tomato;
+  font-weight: bold;
+  font-colour: grey;
+  padding: 5px;
+  margin: 3px;
+  width: 30%;
 }
 
 div {
