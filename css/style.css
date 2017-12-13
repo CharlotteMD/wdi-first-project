@@ -109,6 +109,7 @@ button.submit  {
   background-color: grey;
   border: thick black solid;
   display: block;
+  width: 50%;
 }
 
 h2 {
@@ -127,17 +128,28 @@ p {
   text-align: justify;
   background: white;
   border-radius: 3%;
+  display: flex;
 }
 
 br {
   height: 20em;
 }
 
-.watch {
-  max-width: 25%;
+.watch img{
+  max-width: 50%;
+  position: relative;
+  flex-wrap: wrap;
 }
 
-.time .level {
+.time {
+  
+  font-size: 12 px
+  font-family: 'Special Elite', cursive;
+  color: white;
+  background-color: black;
+}
+
+.level {
   position: absolute;
   font-size: 12 px
   font-family: 'Special Elite', cursive;

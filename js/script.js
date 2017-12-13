@@ -112,6 +112,14 @@ $(function(){
 
   const cellAudio = new Audio('./sounds/cell.mp3');
 
+  const score = function() {
+    console.count(winSequence);
+  };
+
+  const progress = function() {
+    $score.text(score);
+  };
+
   const escapeSequence = function () {
     $villain.css('visibility', 'visible');
   };
@@ -136,10 +144,11 @@ $(function(){
     alert('You win!');
     cellAudio.play();
     captureSequence();
-
     setTimeout(() => {
       resetCctv();
     }, 3000);
+    progress();
+    // make the whole game stop when you get to 0 seconds
   };
 
   const startTimer = function() {
@@ -155,10 +164,6 @@ $(function(){
   };
 
   // const score = log every time win sequence runs, put number in $score on watch
-
-  const score = function() {
-    console.count(winSequence);
-  };
 
   // BUTTON EVENT LISTENERS
   $instr.on('click',() => {
