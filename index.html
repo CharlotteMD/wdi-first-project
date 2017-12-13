@@ -13,18 +13,21 @@
 <body>
   <header>
     <h1><img src="./images/other/h1title.png" alt="Whodunit Title"></h1>
+
     <div class="watch">
       <div class="info-level-time">
         <p class="time">Time</p>
         <p class="level">Level</p>
       </div>
-
     </div>
-  </header>
-    <button type="button" name="start" class="start">Start New Game</button>
-    <button type="button" name="next" class="next">Next Suspect</button>
-    <button type="button" name="instructions" class="instr">Instructions</button>
 
+    <div class="buttons">
+      <button type="button" name="start" class="start">Start New Game</button>
+      <button type="button" name="next" class="next">Next Suspect</button>
+      <button type="button" name="instructions" class="instr">Instructions</button>
+    </div>
+    
+  </header>
 
   <section>
     <div class="cctv">
@@ -43,7 +46,6 @@
 
     <div class="selectors">
       <form>
-        <!-- <label for="eyes">Eyes</label> -->
         <img src="./images/icons/eye.png" alt="Eye">
         <select id="eyes-select" name="eyes" placeholder="eyes">
           <option value="eyesplaceholder" disabled selected>Select eyes</option>
@@ -58,7 +60,6 @@
         </select>
       </form>
       <form>
-        <!-- <label for="nose">Nose</label> -->
         <img src="./images/icons/nose.png" alt="Nose">
         <select id="nose-select" name="nose" placeholder="nose">
         <option value="noseplaceholder" disabled selected>Select nose</option>
@@ -73,7 +74,7 @@
         </select>
       </form>
       <form>
-        <!-- <label for="mouth">Mouth</label> -->
+
         <img src="./images/icons/mouth.png" alt="Mouth">
         <select id="mouth-select" name="mouth" placeholder="mouth">
         <option value="mouthplaceholder" disabled selected>Select mouth</option>
