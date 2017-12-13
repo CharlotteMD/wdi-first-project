@@ -65,14 +65,11 @@ div {
   /*slide animation isnt working*/
 }
 
-/*@-webkit-keyframes slide {
-    100% { left: 0; }
+#villain {
+  position: absolute;
 }
 
-@keyframes slide {
-    100% { left: 0; }
-}
-}*/
+
 
 .selectors {
   flex-wrap: wrap;
@@ -117,6 +114,7 @@ button.submit  {
   margin: 10px;
   background-color: grey;
   border: thick black solid;
+  display: block;
 }
 
 h2 {
@@ -139,4 +137,16 @@ p {
 
 br {
   height: 20em;
+}
+
+.watch {
+  max-width: 25%;
+}
+
+.time .level {
+  position: absolute;
+  font-size: 12 px
+  font-family: 'Special Elite', cursive;
+  color: white;
+  background-color: black;
 }

@@ -19,6 +19,7 @@ $(function(){
   const $mugNose = $('#mugshotnose');
   const $mugMouth = $('#mugshotmouth');
   const $cellBars = $('#cellbars');
+  const $villain = $('#villain');
   // SELECTORS
   const $selectEyes = $('.selectors #eyes-select');
   const $selectNose = $('.selectors #nose-select');
@@ -39,29 +40,52 @@ $(function(){
     $mugEyes.attr('src','./images/other/mugshot1.png');
     $mugNose.attr('src','./images/other/mugshot2.png');
     $mugMouth.attr('src','./images/other/mugshot3.png');
+    $cellBars.css('visibility', 'hidden');
+    $villain.css('visibility', 'hidden');
+    // get rid of cellBars & villain 
   };
 
   const loseSequence = function() {
     alert('You lose!');
+
     const laugh = new Audio('./sounds/laugh.mp3');
     laugh.play();
+
     $mugEyes.attr('src','./images/other/mugshot1.png');
     $mugNose.attr('src','./images/other/mugshot2.png');
     $mugMouth.attr('src','./images/other/mugshot3.png');
-    // add animation for lose sequence
-  };
 
-  const winSequence = function() {
-    alert('You win!');
-    const cell = new Audio('./sounds/cell.mp3');
-    cell.play();
-    $mugDiv.prepend('<img src="./images/other/cell-bars.png" alt="cell bars" id="cellbars">');
-    $cellBars.slideDown();
+    $mugDiv.prepend('<img src="./images/other/villain.png" alt="villain" id="villain">');
+    $villain.css('visibility', 'visible');
+    $villain.slideLeft();
     // animation doesnt work
     setTimeout(() => {
       $cctvEyes.attr('src', './images/other/static-eyes.png');
       $cctvNose.attr('src', './images/other/static-nose.png');
       $cctvMouth.attr('src', './images/other/static-mouth.png');
+      $mugEyes.attr('src','./images/other/mugshot1.png');
+      $mugNose.attr('src','./images/other/mugshot2.png');
+      $mugMouth.attr('src','./images/other/mugshot3.png');
+    // add animation for lose sequence
+    });
+  };
+
+  const winSequence = function() {
+    alert('You win!');
+
+    const cell = new Audio('./sounds/cell.mp3');
+    cell.play();
+
+    $mugDiv.prepend('<img src="./images/other/cell-bars.png" alt="cell bars" id="cellbars">');
+    $cellBars.css('visibility', 'visible');
+    $cellBars.slideDown();
+    // animation doesnt work
+    setTimeout(() => {
+      $cctvEyes.attr('src', './images/other/static-eyes.png');
+      $cctvNose.attr('src', './images/other/static-nose.png');
+      $cctvMouth.attr('src', './images/other/static-mouth.png');  $mugEyes.attr('src','./images/other/mugshot1.png');
+      $mugNose.attr('src','./images/other/mugshot2.png');
+      $mugMouth.attr('src','./images/other/mugshot3.png');
     },
     3000);
   };
