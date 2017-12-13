@@ -86,26 +86,19 @@ $(function(){
   };
 
   const captureSequence = function () {
-    $mugDiv.prepend('<img src="./images/other/cell-bars.png" alt="cell bars" id="cellbars">');
-    setTimeout(() => {
-      $mugDiv.prepend('<img src="./images/other/cell-bars.png" alt="cell bars" id="cellbars">');
-      $cellBars.css('visibility', 'visible');
-      // $cellBars.slideDown();
-    // animation doesnt work
-    }, 3000);
-
+    $cellBars.css('visibility', 'visible');
   };
 
   const loseSequence = function() {
     alert('You lose!');
     laugh.play();
-    resetMugDiv();
+    // resetMugDiv();
     escapeSequence();
 
     setTimeout(() => {
       resetCctv();
       resetMugDiv();
-    });
+    }, 3000);
   };
 
   const winSequence = function() {
@@ -115,9 +108,7 @@ $(function(){
 
     setTimeout(() => {
       resetCctv();
-      resetMugDiv();
     }, 3000);
-
   };
 
   const startTimer = function() {

@@ -56,13 +56,8 @@ div {
 
 #cellbars {
   position: absolute;
-  /*transition-duration: 3s;*/
+  visibility: hidden;
   background: inherit;
-  /*animation: slide 10s down;
-  -webkit-animation: slide 10s down;*/
-  /*-webkit-animation-delay: 2s;*/*/
-  /*animation-delay: 2s;*/
-  /*slide animation isnt working*/
 }
 
 #villain {
