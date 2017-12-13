@@ -160,8 +160,8 @@ $(function(){
       if(timeRemaining === 0) {
         clearInterval(timerId);
         $watch.addClass('ringing');
-        // setFinishDiv();
         finish();
+        alert(`Time is up! You put ${score} villains in prison!`);
       }
     }, 1000);
   };
@@ -170,11 +170,11 @@ $(function(){
 
   const finish = function() {
     $selectors.css('visibility', 'hidden');
-    $finish.css('visibility', 'visible');
+    // $finish.css('visibility', 'visible');
   };
 
   // const setFinishDiv = function() {
-  //
+  //   <p>You put X villains in prison!</p>
   // };
 
 // need to put selectors visible again when game is restarted.
