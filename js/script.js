@@ -8,7 +8,7 @@ $(function(){
   const $next = $('.next');
   // DIVS
   // const $cctvDiv = $('.cctv');
-  const $mugDiv = $('.mugshot');
+  // const $mugDiv = $('.mugshot');
   const $selectors = $('.selectors');
   const $instructions = $('.instructions');
   const $timer = $('.time');
@@ -35,9 +35,11 @@ $(function(){
   let compSetNose = null;
   let compSetMouth = null;
   const picsCount = 8;
-  let timeRemaining = 60;
+  let timeRemaining = 10;
   let timerId = null;
-// FUNCTIONS
+  let score = 0;
+
+  // FUNCTIONS
   const resetMugDiv = function () {
     $mugEyes.attr('src','./images/other/mugshot1.png');
     $mugNose.attr('src','./images/other/mugshot2.png');
@@ -59,7 +61,7 @@ $(function(){
 
   const refresh = function () {
     nextSuspect();
-    let timeRemaining = 60;
+    timeRemaining = 10;
     // this doesnt stop the timer?
   };
 
@@ -112,10 +114,6 @@ $(function(){
 
   const cellAudio = new Audio('./sounds/cell.mp3');
 
-  const score = function() {
-    console.count(winSequence);
-  };
-
   const progress = function() {
     $score.text(score);
   };
@@ -147,11 +145,13 @@ $(function(){
     setTimeout(() => {
       resetCctv();
     }, 3000);
+    score++;
     progress();
     // make the whole game stop when you get to 0 seconds
   };
 
   const startTimer = function() {
+    clearInterval(timerId);
     timerId = setInterval(() => {
       timeRemaining--;
       $timer.text(timeRemaining);

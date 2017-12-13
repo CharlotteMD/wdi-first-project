@@ -110,6 +110,7 @@ button.submit  {
   border: thick black solid;
   display: block;
   width: 50%;
+  display: inline-block;
 }
 
 h2 {
@@ -128,7 +129,7 @@ p {
   text-align: justify;
   background: white;
   border-radius: 3%;
-  display: flex;
+
 }
 
 br {
@@ -136,23 +137,28 @@ br {
 }
 
 .watch img{
-  max-width: 50%;
+  max-width: 25%;
+  float: right;
+  display: inline-block;
   position: relative;
-  flex-wrap: wrap;
+  display: flex;
 }
 
 .time {
-  
-  font-size: 12 px
+  /*font-size: 12 px
   font-family: 'Special Elite', cursive;
   color: white;
-  background-color: black;
+  background-color: yellow;
+  position: absolute;
+  z-index: 100;
+  justify-content: center;*/
 }
 
 .level {
-  position: absolute;
+  /*position: absolute;
+  z-index: 99;
   font-size: 12 px
   font-family: 'Special Elite', cursive;
   color: white;
-  background-color: black;
-}
+  background-color: red;
+}*/
