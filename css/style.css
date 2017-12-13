@@ -67,6 +67,7 @@ div {
 
 #villain {
   position: absolute;
+  visibility: hidden;
 }
 
 

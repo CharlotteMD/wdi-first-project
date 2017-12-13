@@ -82,17 +82,18 @@ $(function(){
   const cellAudio = new Audio('./sounds/cell.mp3');
 
   const escapeSequence = function () {
-    $mugDiv.prepend('<img src="./images/other/villain.png" alt="villain" id="villain">');
     $villain.css('visibility', 'visible');
-    $villain.slideLeft();
-    // animation doesnt work
   };
 
   const captureSequence = function () {
     $mugDiv.prepend('<img src="./images/other/cell-bars.png" alt="cell bars" id="cellbars">');
-    $cellBars.css('visibility', 'visible');
-    $cellBars.slideDown();
-  // animation doesnt work
+    setTimeout(() => {
+      $mugDiv.prepend('<img src="./images/other/cell-bars.png" alt="cell bars" id="cellbars">');
+      $cellBars.css('visibility', 'visible');
+      // $cellBars.slideDown();
+    // animation doesnt work
+    }, 3000);
+
   };
 
   const loseSequence = function() {
@@ -119,7 +120,7 @@ $(function(){
 
   };
 
-  function startTimer() {
+  const startTimer = function() {
     timerId = setInterval(() => {
       timeRemaining--;
       $timer.text(timeRemaining);
@@ -129,10 +130,15 @@ $(function(){
         $watch.addClass('ringing');
       }
     }, 1000);
-  }
+  };
+
+  // const score = log every time win sequence runs, put number in $score on watch
+
+  const score = function() {
+    console.count(winSequence);
+  };
 
   // BUTTON EVENT LISTENERS
-
   $instr.on('click',() => {
     var offset = 20;
     $('html, body').animate({
@@ -151,7 +157,7 @@ $(function(){
     setTimeout(() => {
       resetCctv();
       $selectors.css('visibility', 'visible');
-    }, 6000);
+    }, 4000);
 
     console.log('Villain is ' + compSetEyes);
     console.log('Villain is ' + compSetNose);
