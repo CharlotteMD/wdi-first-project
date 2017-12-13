@@ -32,23 +32,26 @@ h1 img {
   display: flex;
 }
 
-.time {
-  font-size: 12 px
-  font-family: 'Special Elite', cursive;
-  color: green;
-  background-color: yellow;
-  position: absolute;
+.info-level-time {
+  background-image: url(../images/other/timer.png);
   z-index: 100;
   justify-content: center;
+  width: 110px;
+  height: 110px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-.level {
+.level{margin: 67px 37px}
+.time{margin: 40px 38px }
+.level, .time{
   position: absolute;
   z-index: 99;
   font-size: 12 px
   font-family: 'Special Elite', cursive;
   color: green;
-  background-color: red;
+  background-color: inherit;
+  padding:0;
 }
 
 section {
@@ -140,9 +143,6 @@ button.submit  {
   margin: 10px;
   background-color: grey;
   border: thick black solid;
-  display: block;
-  width: 50%;
-  display: inline-block;
 }
 
 h2 {
