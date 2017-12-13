@@ -12,7 +12,7 @@ button {
   font-colour: grey;
   padding: 5px;
   margin 3px;
-  width: 49%;
+  width: 30%;
 }
 
 h1 img{
@@ -64,8 +64,6 @@ div {
   position: absolute;
   visibility: hidden;
 }
-
-
 
 .selectors {
   flex-wrap: wrap;

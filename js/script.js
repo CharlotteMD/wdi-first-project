@@ -5,7 +5,7 @@ $(function(){
   const $startButton = $('.start');
   const $instr = $('.instr');
   const $submit = $('.submit');
-  // const $refresh = $('.refresh');
+  const $next = $('.next');
   // DIVS
   // const $cctvDiv = $('.cctv');
   const $mugDiv = $('.mugshot');
@@ -50,13 +50,44 @@ $(function(){
     $cctvMouth.attr('src', './images/other/static-mouth.png');
   };
 
+  const start = function() {
+    cctvSetUp();
+    selectorHide();
+    logVillain();
+    startTimer();
+  };
+
   const refresh = function () {
+    nextSuspect();
+    let timeRemaining = 60;
+    // this doesnt stop the timer?
+  };
+
+  const nextSuspect = function () {
     resetCctv();
     resetMugDiv();
     $cellBars.css('visibility', 'hidden');
     $villain.css('visibility', 'hidden');
-    let timeRemaining = 60;
-    // get rid of cellBars & villain
+  };
+
+  const selectorHide = function() {
+    $selectors.css('visibility', 'hidden');
+    setTimeout(() => {
+      resetCctv();
+      $selectors.css('visibility', 'visible');
+    }, 4000);
+  };
+
+  const cctvSetUp = function() {
+    setSuspectEyes();
+    setSuspectNose();
+    setSuspectMouth();
+  };
+
+  const logVillain = function() {
+    console.log('Villain is ' + compSetEyes);
+    console.log('Villain is ' + compSetNose);
+    console.log('Villain is ' + compSetMouth);
   };
 
   const setSuspectEyes = function() {
@@ -137,23 +168,14 @@ $(function(){
     }, 2000);
   });
 
+  $next.on('click', () => {
+    nextSuspect();
+    start();
+  });
+
   $startButton.on('click', () => {
     refresh();
-    setSuspectEyes();
-    setSuspectNose();
-    setSuspectMouth();
-    startTimer();
-    $selectors.css('visibility', 'hidden');
-
-    setTimeout(() => {
-      resetCctv();
-      $selectors.css('visibility', 'visible');
-    }, 4000);
-
-    console.log('Villain is ' + compSetEyes);
-    console.log('Villain is ' + compSetNose);
-    console.log('Villain is ' + compSetMouth);
-
+    start();
   });
 
   $selectEyes.on('change', () => {
