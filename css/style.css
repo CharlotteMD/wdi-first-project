@@ -135,6 +135,7 @@ select {
 
 button.submit  {
   width: 100%;
+  margin: 0px;
 }
 
 .instructions {
