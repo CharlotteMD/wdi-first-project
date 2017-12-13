@@ -15,8 +15,40 @@ button {
   width: 30%;
 }
 
+header {
+  display: flex;
+}
+
 h1 img {
-  width: 100%;
+  flex-wrap: wrap;
+  width: 70%;
+}
+
+.watch img {
+  max-width: 25%;
+  float: right;
+  display: inline-block;
+  position: relative;
+  display: flex;
+}
+
+.time {
+  font-size: 12 px
+  font-family: 'Special Elite', cursive;
+  color: green;
+  background-color: yellow;
+  position: absolute;
+  z-index: 100;
+  justify-content: center;
+}
+
+.level {
+  position: absolute;
+  z-index: 99;
+  font-size: 12 px
+  font-family: 'Special Elite', cursive;
+  color: green;
+  background-color: red;
 }
 
 section {
@@ -134,38 +166,4 @@ p {
 
 br {
   height: 20em;
-}
-
-.watch img {
-  max-width: 25%;
-  float: right;
-  display: inline-block;
-  position: relative;
-  display: flex;
-}
-
-/*.time {
-  font-size: 12 px
-  font-family: 'Special Elite', cursive;
-  color: white;
-  background-color: yellow;
-  position: absolute;
-  z-index: 100;
-  justify-content: center;
-}
-
-.level {
-  position: absolute;
-  z-index: 99;
-  font-size: 12 px
-  font-family: 'Special Elite', cursive;
-  color: white;
-  background-color: red;
-}*/
-
-.finish {
-  visibility: hidden;
-  z-index: 100;
-  border: black solid 3px;
-  background-color: yellow;
 }
