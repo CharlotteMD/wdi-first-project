@@ -1,6 +1,6 @@
 body {
   max-width: 900px;
-  min-width: 355px
+  min-width: 355px;
   margin: 0 auto;
 }
 
@@ -38,7 +38,7 @@ h1 img {
 
 .level, .time{
   position: absolute;
-  font-size: 12 px;
+  font-size: 12px;
   font-family: 'Special Elite', cursive;
   color: white;
   background-color: inherit;
@@ -57,10 +57,9 @@ button {
   background-color: tomato;
   border: 2px solid tomato;
   font-weight: bold;
-  font-colour: grey;
+  font-color: grey;
   padding: 10px;
   margin: 10px;
-  /* width: 130px; */
   display: block;
   justify-content: space-around;
 }
@@ -125,14 +124,13 @@ form {
   padding: 3px;
   margin: 15px 5px 5px 5px;
   flex-wrap: wrap;
-  align-items: left;
+  align-items: center;
 }
 
 select {
   width: 70%;
   align-content: space-between;
-  align-items: right;
-  /* padding: 10px 10px; */
+  align-items: center;
   margin: 35px 0;
 }
 
@@ -235,7 +233,6 @@ br {
     margin: 0px;
     background: dodgerblue;
     padding: 10px;
-    margin: 5px;
   }
 
 }
