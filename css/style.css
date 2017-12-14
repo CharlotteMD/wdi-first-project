@@ -1,5 +1,6 @@
 body {
   max-width: 900px;
+  min-width: 355px
   margin: 0 auto;
 }
 
@@ -219,6 +220,7 @@ br {
     justify-content: space-around;
     flex-direction: row;
     border: none;
+    background: tomato;
     }
 
   form {
@@ -228,6 +230,9 @@ br {
   button.submit {
     width: 100%;
     margin: 0px;
+    background: dodgerblue;
+    padding: 10px;
+    margin: 5px;
   }
 
 }
@@ -272,5 +277,8 @@ br {
     flex-direction: column;
   }
 
+  form {
+    width: 100%;
+  }
 
 }
