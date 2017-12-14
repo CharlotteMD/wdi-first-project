@@ -38,15 +38,15 @@ $(function(){
 
   // FUNCTIONS
   const resetMugDiv = function () {
-    $mugEyes.attr('src','./images/other/mugshot1.png');
-    $mugNose.attr('src','./images/other/mugshot2.png');
-    $mugMouth.attr('src','./images/other/mugshot3.png');
+    $mugEyes.attr('src','./images/backgrounds/mugshot1.png');
+    $mugNose.attr('src','./images/backgrounds/mugshot2.png');
+    $mugMouth.attr('src','./images/backgrounds/mugshot3.png');
   };
 
   const resetCctv = function () {
-    $cctvEyes.attr('src', './images/other/static-eyes.png');
-    $cctvNose.attr('src', './images/other/static-nose.png');
-    $cctvMouth.attr('src', './images/other/static-mouth.png');
+    $cctvEyes.attr('src', './images/backgrounds/static-eyes.png');
+    $cctvNose.attr('src', './images/backgrounds/static-nose.png');
+    $cctvMouth.attr('src', './images/backgrounds/static-mouth.png');
   };
 
   const start = function() {
