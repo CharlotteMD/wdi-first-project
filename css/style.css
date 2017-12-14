@@ -247,7 +247,21 @@ br {
 @media only screen and (max-width: 680px) {
 
   h1 img {
-    width: 100%;
+    width: 350px;
+    flex-wrap: wrap;
+  }
+
+  .info-level-time {
+    flex-wrap: wrap;
+  }
+
+  .buttons {
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  button {
+    flex-wrap: wrap;
   }
 
   .selectors {
