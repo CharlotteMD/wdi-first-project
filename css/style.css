@@ -134,7 +134,7 @@ select {
   margin: 35px 0;
 }
 
-button.submit  {
+button.submit {
   width: 100%;
   margin: 0px;
 }
@@ -169,4 +169,90 @@ p {
 
 br {
   height: 20em;
+}
+
+@media only screen and (max-width: 900px) {
+
+  button {
+    padding: 3px;
+    margin: 3px;
+    margin-bottom: 30px;
+    margin-top: 15px;
+    max-width: 110px;
+  }
+
+  button.submit {
+    width: 100%;
+    margin: 0px;
+  }
+
+
+
+}
+
+@media only screen and (max-width: 850px) {
+
+  h1 img {
+    width: 95%;
+  }
+
+  section {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cctv, .mugshot {
+    flex-wrap: wrap;
+    width: 275px;
+    margin: 10px;
+}
+
+  .cctv img, .mugshot img {
+    width: 275px;
+    padding: -2px;
+    margin-bottom: -4px;
+    /* margin-top: -2px; */
+    background: grey;
+    align-items: center;
+    justify-content: center;
+  }
+  .selectors {
+    /* min-width: 165px; */
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: row;
+    border: none;
+    }
+
+  form {
+    width: 30%;
+  }
+
+  button.submit {
+    width: 100%;
+  }
+
+}
+
+@media only screen and (max-width: 740px) {
+
+  h1 img {
+    width: 95%;
+  }
+
+}
+
+@media only screen and (max-width: 680px) {
+
+  h1 img {
+    width: 100%;
+  }
+
+  .selectors {
+    flex-direction: column;
+  }
+
+
 }
