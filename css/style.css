@@ -130,7 +130,7 @@ select {
   width: 70%;
   align-content: space-between;
   align-items: right;
-  padding: 10px 10px;
+  /* padding: 10px 10px; */
   margin: 35px 0;
 }
 
@@ -185,9 +185,6 @@ br {
     width: 100%;
     margin: 0px;
   }
-
-
-
 }
 
 @media only screen and (max-width: 850px) {
@@ -211,13 +208,11 @@ br {
     width: 275px;
     padding: -2px;
     margin-bottom: -4px;
-    /* margin-top: -2px; */
     background: grey;
     align-items: center;
     justify-content: center;
   }
   .selectors {
-    /* min-width: 165px; */
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -232,6 +227,7 @@ br {
 
   button.submit {
     width: 100%;
+    margin: 0px;
   }
 
 }
@@ -246,8 +242,16 @@ br {
 
 @media only screen and (max-width: 680px) {
 
+  header {
+    display: flex;
+  }
+
   h1 img {
     width: 350px;
+    flex-wrap: wrap;
+  }
+
+  .watch {
     flex-wrap: wrap;
   }
 
