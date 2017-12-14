@@ -7,6 +7,7 @@ body {
 header {
   display: flex;
   margin-top: 10px;
+  justify-content: center;
 }
 
 h1 img {
@@ -59,7 +60,7 @@ button {
   font-colour: grey;
   padding: 10px;
   margin: 10px;
-  width: 130px;
+  /* width: 130px; */
   display: block;
   justify-content: space-around;
 }
@@ -174,18 +175,20 @@ br {
 
 @media only screen and (max-width: 900px) {
 
-  button {
-    padding: 3px;
-    margin: 3px;
-    margin-bottom: 30px;
-    margin-top: 15px;
-    max-width: 110px;
+  header {
+    display: flex;
+    flex-wrap: wrap;
   }
 
-  button.submit {
-    width: 100%;
-    margin: 0px;
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
   }
+
+  button.buttons {
+    width: 30%;
+  }
+
 }
 
 @media only screen and (max-width: 850px) {
@@ -203,7 +206,7 @@ br {
     flex-wrap: wrap;
     width: 275px;
     margin: 10px;
-}
+  }
 
   .cctv img, .mugshot img {
     width: 275px;
@@ -252,16 +255,7 @@ br {
   }
 
   h1 img {
-    width: 350px;
-    flex-wrap: wrap;
-  }
-
-  .watch {
-    flex-wrap: wrap;
-  }
-
-  .info-level-time {
-    flex-wrap: wrap;
+    width: 95%;
   }
 
   .buttons {
