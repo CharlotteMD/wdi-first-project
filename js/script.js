@@ -41,6 +41,14 @@ $(function(){
   let score = 0;
 
   // FUNCTIONS
+
+  // code to hide instr - need to rewrite jquery selectors
+  // const instrHidden = $instrPara.css('visibility', 'hidden');
+  // const instrAppear = $instrPara.css('visibility', 'visible');
+  // $instrPara.mouseover(instrAppear);
+  // $instrPara.mouseout(instrHidden);
+  // would need to hide the p tag but not p as a whole as p is also used for timer and level!!!
+
   const resetMugDiv = function () {
     $mugEyes.attr('src','./images/other/mugshot1.png');
     $mugNose.attr('src','./images/other/mugshot2.png');
