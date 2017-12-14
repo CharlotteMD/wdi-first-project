@@ -35,8 +35,8 @@ $(function(){
   let compSetEyes = null;
   let compSetNose = null;
   let compSetMouth = null;
-  const picsCount = 8;
-  let timeRemaining = 120;
+  const picsCount = 10;
+  let timeRemaining = 90;
   let timerId = null;
   let score = 0;
 
@@ -70,7 +70,7 @@ $(function(){
 
   const refresh = function () {
     nextSuspect();
-    timeRemaining = 120;
+    timeRemaining = 90;
     score = 0;
   };
 
