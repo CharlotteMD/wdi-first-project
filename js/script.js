@@ -7,14 +7,10 @@ $(function(){
   const $submit = $('.submit');
   const $next = $('.next');
   // DIVS
-  // const $cctvDiv = $('.cctv');
-  // const $mugDiv = $('.mugshot');
   const $selectors = $('.selectors');
   const $instructions = $('.instructions');
   const $timer = $('.time');
-  const $watch = $('.watch');
   const $score = $('.level');
-  const $finish = $('.finish');
   // IMGS
   const $cctvEyes = $('.cctv #eyes');
   const $cctvNose = $('.cctv #nose');
@@ -41,14 +37,6 @@ $(function(){
   let score = 0;
 
   // FUNCTIONS
-
-  // code to hide instr - need to rewrite jquery selectors
-  // const instrHidden = $instrPara.css('visibility', 'hidden');
-  // const instrAppear = $instrPara.css('visibility', 'visible');
-  // $instrPara.mouseover(instrAppear);
-  // $instrPara.mouseout(instrHidden);
-  // would need to hide the p tag but not p as a whole as p is also used for timer and level!!!
-
   const resetMugDiv = function () {
     $mugEyes.attr('src','./images/other/mugshot1.png');
     $mugNose.attr('src','./images/other/mugshot2.png');
@@ -136,9 +124,7 @@ $(function(){
   };
 
   const loseSequence = function() {
-    // alert('You lose!');
     laugh.play();
-    // resetMugDiv();
     escapeSequence();
 
     setTimeout(() => {
@@ -148,7 +134,6 @@ $(function(){
   };
 
   const winSequence = function() {
-    // alert('You win!');
     cellAudio.play();
     captureSequence();
     setTimeout(() => {
@@ -166,7 +151,6 @@ $(function(){
 
       if(timeRemaining === 0) {
         clearInterval(timerId);
-        // $watch.addClass('ringing');
         finish();
         alert(`Time is up! You put ${score} villains in prison!`);
         refresh();
@@ -176,7 +160,6 @@ $(function(){
 
   const finish = function() {
     $selectors.css('visibility', 'hidden');
-    // $finish.css('visibility', 'visible');
   };
 
   // BUTTON EVENT LISTENERS
@@ -230,6 +213,5 @@ $(function(){
       loseSequence();
     }
   });
-
 
 });
