@@ -35,6 +35,7 @@ $(function(){
   let timeRemaining = 90;
   let timerId = null;
   let score = 0;
+  let winLose = false;
 
   // FUNCTIONS
   const resetMugDiv = function () {
@@ -73,8 +74,10 @@ $(function(){
     $selectors.css('visibility', 'hidden');
     setTimeout(() => {
       resetCctv();
+      console.log('cctv reset');
       $selectors.css('visibility', 'visible');
-    }, 4000);
+      console.log('selectors visible');
+    }, 5000);
   };
 
   const cctvSetUp = function() {
@@ -124,20 +127,27 @@ $(function(){
   };
 
   const loseSequence = function() {
+    winLose = true;
+    $next.css('background-color', 'grey');
     laugh.play();
     escapeSequence();
-
     setTimeout(() => {
       resetCctv();
       resetMugDiv();
+      winLose = false;
+      $next.css('background-color', 'tomato');
     }, 3000);
   };
 
   const winSequence = function() {
+    winLose = true;
+    $next.css('background-color', 'grey');
     cellAudio.play();
     captureSequence();
     setTimeout(() => {
       resetCctv();
+      winLose = false;
+      $next.css('background-color', 'tomato');
     }, 3000);
     score++;
     progress();
@@ -148,7 +158,6 @@ $(function(){
     timerId = setInterval(() => {
       timeRemaining--;
       $timer.text(timeRemaining);
-
       if(timeRemaining === 0) {
         clearInterval(timerId);
         finish();
@@ -171,8 +180,10 @@ $(function(){
   });
 
   $next.on('click', () => {
-    nextSuspect();
-    start();
+    if (!winLose) {
+      nextSuspect();
+      start();
+    }
   });
 
   $startButton.on('click', () => {
