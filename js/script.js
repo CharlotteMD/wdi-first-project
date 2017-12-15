@@ -36,6 +36,7 @@ $(function(){
   let timerId = null;
   let score = 0;
   let winLose = false;
+  let accused = true;
 
   // FUNCTIONS
   const resetMugDiv = function () {
@@ -64,6 +65,8 @@ $(function(){
   };
 
   const nextSuspect = function () {
+    accused = true;
+    $submit.css('background-color', 'tomato');
     resetCctv();
     resetMugDiv();
     $cellBars.css('visibility', 'hidden');
@@ -151,6 +154,8 @@ $(function(){
     }, 3000);
     score++;
     progress();
+    accused = false;
+    $submit.css('background-color', 'grey');
   };
 
   const startTimer = function() {
@@ -211,18 +216,25 @@ $(function(){
 
   $submit.on('click', (event) => {
     event.preventDefault();
-    const selectedEyes = $('#eyes-select').val();
-    const selectedNose = $('#nose-select').val();
-    const selectedMouth = $('#mouth-select').val();
-    $cctvEyes.attr('src',`./images/mugshots/eyes/eyes-${randomNumberEye}.png`);
-    $cctvNose.attr('src', `./images/mugshots/nose/nose-${randomNumberNose}.png`);
-    $cctvMouth.attr('src',`./images/mugshots/mouth/mouth-${randomNumberMouth}.png`);
-
-    if ((selectedEyes === compSetEyes) && (selectedNose === compSetNose) && (selectedMouth === compSetMouth)) {
-      winSequence();
-    } else {
-      loseSequence();
-    }
+    accuse();
   });
+
+  const accuse = function() {
+    console.log(accused)
+    if (accused === true) {
+      const selectedEyes = $('#eyes-select').val();
+      const selectedNose = $('#nose-select').val();
+      const selectedMouth = $('#mouth-select').val();
+      $cctvEyes.attr('src',`./images/mugshots/eyes/eyes-${randomNumberEye}.png`);
+      $cctvNose.attr('src', `./images/mugshots/nose/nose-${randomNumberNose}.png`);
+      $cctvMouth.attr('src',`./images/mugshots/mouth/mouth-${randomNumberMouth}.png`);
+
+      if ((selectedEyes === compSetEyes) && (selectedNose === compSetNose) && (selectedMouth === compSetMouth)) {
+        winSequence();
+      } else {
+        loseSequence();
+      }
+    }
+  };
 
 });
