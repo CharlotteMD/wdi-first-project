@@ -92,19 +92,19 @@ $(function(){
   const setSuspectEyes = function() {
     randomNumberEye = Math.ceil(Math.random()*picsCount);
     compSetEyes = ('eyes-' + randomNumberEye);
-    $cctvEyes.attr('src',`./images/faces/eyes/eyes-${randomNumberEye}.png`);
+    $cctvEyes.attr('src',`./images/mugshots/eyes/eyes-${randomNumberEye}.png`);
   };
 
   const setSuspectNose = function() {
     randomNumberNose = Math.ceil(Math.random()*picsCount);
     compSetNose = ('nose-' + randomNumberNose);
-    $cctvNose.attr('src', `./images/faces/nose/nose-${randomNumberNose}.png`);
+    $cctvNose.attr('src', `./images/mugshots/nose/nose-${randomNumberNose}.png`);
   };
 
   const setSuspectMouth = function() {
     randomNumberMouth = Math.ceil(Math.random()*picsCount);
     compSetMouth = ('mouth-' + randomNumberMouth);
-    $cctvMouth.attr('src',`./images/faces/mouth/mouth-${randomNumberMouth}.png`);
+    $cctvMouth.attr('src',`./images/mugshots/mouth/mouth-${randomNumberMouth}.png`);
   };
 
   const laugh = new Audio('./sounds/laugh.mp3');
@@ -183,19 +183,19 @@ $(function(){
   $selectEyes.on('change', () => {
     const eyeNumber = (event.target.value);
     console.log('Player chose ' + eyeNumber);
-    $mugEyes.attr('src', `./images/faces/eyes/${eyeNumber}.png`);
+    $mugEyes.attr('src', `./images/mugshots/eyes/${eyeNumber}.png`);
   });
 
   $selectNose.on('change', (event) => {
     const noseNumber = (event.target.value);
     console.log('Player chose ' + noseNumber);
-    $mugNose.attr('src', `./images/faces/nose/${noseNumber}.png`);
+    $mugNose.attr('src', `./images/mugshots/nose/${noseNumber}.png`);
   });
 
   $selectMouth.on('change', (event) => {
     const mouthNumber = (event.target.value);
     console.log('Player chose ' + mouthNumber);
-    $mugMouth.attr('src', `./images/faces/mouth/${mouthNumber}.png`);
+    $mugMouth.attr('src', `./images/mugshots/mouth/${mouthNumber}.png`);
   });
 
   $submit.on('click', (event) => {
@@ -203,9 +203,9 @@ $(function(){
     const selectedEyes = $('#eyes-select').val();
     const selectedNose = $('#nose-select').val();
     const selectedMouth = $('#mouth-select').val();
-    $cctvEyes.attr('src',`./images/faces/eyes/eyes-${randomNumberEye}.png`);
-    $cctvNose.attr('src', `./images/faces/nose/nose-${randomNumberNose}.png`);
-    $cctvMouth.attr('src',`./images/faces/mouth/mouth-${randomNumberMouth}.png`);
+    $cctvEyes.attr('src',`./images/mugshots/eyes/eyes-${randomNumberEye}.png`);
+    $cctvNose.attr('src', `./images/mugshots/nose/nose-${randomNumberNose}.png`);
+    $cctvMouth.attr('src',`./images/mugshots/mouth/mouth-${randomNumberMouth}.png`);
 
     if ((selectedEyes === compSetEyes) && (selectedNose === compSetNose) && (selectedMouth === compSetMouth)) {
       winSequence();
