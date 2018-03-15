@@ -62,6 +62,10 @@
 
 9. Finally I made the game mobile responsive. As part of the mobile responsiveness, I had to add a scroll animation so that when you click on the instructions button, you automatically scroll to the bottom of the page.  After the course I would like to include the mobile responsiveness of the game. Currently it relies on a desktop screen as there is too much going on to fit on a mobile screen. I would improve this by having multiple pages that the app flipped between so that the user was only shown the relevant parts to them at that moment.
 
+<img width="981" alt="screen shot 2018-03-15 at 14 24 16" src="https://user-images.githubusercontent.com/32647222/37469289-da31376c-285c-11e8-8177-7253c72a17e3.png">
+
+<img width="420" alt="screen shot 2018-03-15 at 14 25 13" src="https://user-images.githubusercontent.com/32647222/37469332-ed9663d6-285c-11e8-8841-893a38965217.png">
+
 # Wins
 
 - I really enjoyed this project, specifically:
@@ -102,3 +106,5 @@ With more time, I would have liked to have improved some of the design of the ga
  - In particular I would like to have gotten rid of the alert and added a hidden div which told you your end score.
  - I would also like the instructions to pop up in a hidden div when you click on the instructions button to save space on the main screen.   
  - The game is mobile responsive but it could be better designed to fit on a mobile screen, whereby you could more easily access all key elements of the game - selectors, buttons, timer etc.  
+
+ <img width="847" alt="screen shot 2018-03-15 at 14 28 20" src="https://user-images.githubusercontent.com/32647222/37469421-2368e7d6-285d-11e8-8f49-3c864aa088aa.png">

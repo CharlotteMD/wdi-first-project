@@ -6,11 +6,13 @@ $(function(){
   const $instr = $('.instr');
   const $submit = $('.submit');
   const $next = $('.next');
+
   // DIVS
   const $selectors = $('.selectors');
   const $instructions = $('.instructions');
   const $timer = $('.time');
   const $score = $('.level');
+
   // IMGS
   const $cctvEyes = $('.cctv #eyes');
   const $cctvNose = $('.cctv #nose');
@@ -20,10 +22,12 @@ $(function(){
   const $mugMouth = $('#mugshotmouth');
   const $cellBars = $('#cellbars');
   const $villain = $('#villain');
+
   // SELECTORS
   const $selectEyes = $('.selectors #eyes-select');
   const $selectNose = $('.selectors #nose-select');
   const $selectMouth = $('.selectors #mouth-select');
+
   //VARIABLES
   let randomNumberEye = null;
   let randomNumberNose = null;
@@ -54,7 +58,6 @@ $(function(){
   const start = function() {
     cctvSetUp();
     selectorHide();
-    logVillain();
     startTimer();
   };
 
@@ -87,12 +90,6 @@ $(function(){
     setSuspectEyes();
     setSuspectNose();
     setSuspectMouth();
-  };
-
-  const logVillain = function() {
-    console.log('Villain is ' + compSetEyes);
-    console.log('Villain is ' + compSetNose);
-    console.log('Villain is ' + compSetMouth);
   };
 
   const setSuspectEyes = function() {
@@ -220,7 +217,6 @@ $(function(){
   });
 
   const accuse = function() {
-    console.log(accused)
     if (accused === true) {
       const selectedEyes = $('#eyes-select').val();
       const selectedNose = $('#nose-select').val();

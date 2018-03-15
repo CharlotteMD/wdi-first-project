@@ -33,10 +33,10 @@ h1 img {
   background-repeat: no-repeat;
 }
 
-.time{margin: 73px 72px }
-.level{margin: 115px 68px}
+.time{margin: 73px 72px; }
+.level{margin: 115px 68px; }
 
-.level, .time{
+.level, .time {
   position: absolute;
   font-size: 12px;
   font-family: 'Special Elite', cursive;
