@@ -36,13 +36,13 @@
 # Approach Taken
 
 1. Once I had come up with the idea I drew out some wire frames. The game didn’t change much from the original drawings. I had initially planned to have the user select 5 different facial features (hair, eyes, nose, mouth and perhaps suspect number - to work on number recognition) but in the end I stuck to 3 due to timing, designing complex enough pictures and difficulty level of the game.
-
+<img width="1440" alt="screen shot 2018-03-15 at 14 06 05" src="https://user-images.githubusercontent.com/32647222/37468932-080a1bc8-285c-11e8-960e-2fcd3ba3f2d5.png">
 2. Next I created the image files. I used canva.com. You can find all my images under ./images. The problem with my images is that they were originally huge and didn't load quick enough for the game, so I had to compress them substantially (by around 80%). I needed the images early on as without them the game wouldn’t work.
 
 3. I drafted a very simple HTML file. The file didn’t change much over the project. All I have added is the timer which was a later function.
 
 4. I added basic CSS so that the HTML was arranged properly one the page.  At this stage I added colour but most of the design elements were added much later on.
-
+<img width="1440" alt="screen shot 2018-03-15 at 14 07 50" src="https://user-images.githubusercontent.com/32647222/37468829-dadcae22-285b-11e8-81b7-e09180dfd237.png">
 5. Then I was ready to start the JavaScript.  I found the first bit of game logic relatively straight forward. To get me started I wrote some pseudocode (you can see this in pseudocode.txt).
   - I created a formula to generate a random number between 1 & 10 (1 & 2 during early test phases) for each of the eyes, nose and mouth sections.
   - These numbers were then used to set the suspect image on the CCTV camera - eyes-{randomNumberEye}.png etc.
@@ -51,11 +51,12 @@
 
 6. Next I worked on the timeouts.  I set timeouts on the CCTV so that after 5 seconds the screen would go back to static.  Later on I realised, you could use the selectors while you could still see the suspect on the CCTV screen - obviously a cheat! So I had to disable the selector div while the CCTV div was showing the suspect.  
 
-7. I designed a win and lose sequence with cell bars, a villain and sound effects.  
+7. I designed a win and lose sequence with cell bars, a villain and sound effects.
+<img width="1440" alt="screen shot 2018-03-15 at 14 06 11" src="https://user-images.githubusercontent.com/32647222/37468988-2ecfe5f8-285c-11e8-9812-ed7691a5d71b.png">
   - A bug I had was that you could move on to the next suspect before the sequence had finished which made the CCTV camera sequence out of sync with the selectors being disabled - a frustrating user experience.
     - I disabled the next suspect button while the sequence was playing.
   - I also realised as my score function relied on how many times the win sequence ran, if you clicked accuse multiple times for one win, you could also cheat your score.  
-    - I disabled the accuse button after the win sequence had run once by using a true false variable.
+    - I disabled the accuse button after the win sequence had run once by using a true false variable.  
 
 8. I wanted to make the game harder and more competitive so I added a timer to see how many times you could win in 90 seconds.  I also needed to add a timer within the CSS and HTML which I designed on Canva and placed on the page through CSS.
 
