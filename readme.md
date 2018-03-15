@@ -1,4 +1,5 @@
-# Whodunit Game - Read Me
+<img width="761" alt="h1title" src="https://user-images.githubusercontent.com/32647222/37468280-757e09dc-285a-11e8-9a2e-2125eb927f92.png">
+
 
 - [Play Whodunit on Heroku](https://whodunit-charmd.herokuapp.com/)
 
@@ -30,29 +31,35 @@
 - Heroku
 - Canva
 - HTML Audio
-- Animation 
+- Animation
 
 # Approach Taken
 
-1. Once I had come up with the idea I drew out some wire frames which you can find in - ./Project-1-Game.bmpr. The game didn’t change much from the original drawings. I had initially planned to have the user select 5 different facial features (hair, eyes, nose, mouth and perhaps suspect number - to work on number recognition) but in the end I stuck to 3 due to timing, designing complex enough pictures and difficulty level of the game.
+1. Once I had come up with the idea I drew out some wire frames. The game didn’t change much from the original drawings. I had initially planned to have the user select 5 different facial features (hair, eyes, nose, mouth and perhaps suspect number - to work on number recognition) but in the end I stuck to 3 due to timing, designing complex enough pictures and difficulty level of the game.
 
-2. Next I created the image files. I used canva.com. You can find all my images under ./images. The problem with my images is that they were originally huge so I had to compress them substantially (by around 80%). I needed the images early on as without them the game wouldn’t work.
+2. Next I created the image files. I used canva.com. You can find all my images under ./images. The problem with my images is that they were originally huge and didn't load quick enough for the game, so I had to compress them substantially (by around 80%). I needed the images early on as without them the game wouldn’t work.
 
 3. I drafted a very simple HTML file. The file didn’t change much over the project. All I have added is the timer which was a later function.
 
 4. I added basic CSS so that the HTML was arranged properly one the page.  At this stage I added colour but most of the design elements were added much later on.
 
-5. Then I was ready to start the JavaScript.  I found the first bit of game logic relatively straight forward.  I created a formula to generate a random number between 1 & 10 (1 & 2 during early test phases) for each of the eyes, nose and mouth sections. These numbers were then used to set the suspect image on the CCTV camera - eyes-{randomNumberEye}.png etc. The user then selected the eyes, nose and mouth from a drop down list, the value of which matched the image file, which appeared on the mug screen. The computer then calculated whether the images that the user chose match the one the computer randomly generated.
+5. Then I was ready to start the JavaScript.  I found the first bit of game logic relatively straight forward. To get me started I wrote some pseudocode (you can see this in pseudocode.txt).
+  - I created a formula to generate a random number between 1 & 10 (1 & 2 during early test phases) for each of the eyes, nose and mouth sections.
+  - These numbers were then used to set the suspect image on the CCTV camera - eyes-{randomNumberEye}.png etc.
+  - The user then selected the eyes, nose and mouth from a drop down list, the value of which matched the image file, which appeared on the mug screen.
+  - The computer then calculated whether the images that the user chose match the one the computer randomly generated.
 
 6. Next I worked on the timeouts.  I set timeouts on the CCTV so that after 5 seconds the screen would go back to static.  Later on I realised, you could use the selectors while you could still see the suspect on the CCTV screen - obviously a cheat! So I had to disable the selector div while the CCTV div was showing the suspect.  
 
-7. I designed a win and lose sequence with cell bars, a villain and sound effects.  A bug I had was that you could move on to the next suspect before the sequence had finished which made the CCTV camera sequence out of sync with the selectors being disabled - a frustrating user experience, so I disabled the next suspect button while the sequence was playing. I also realised as my score function relied on how many times the win sequence ran, if you clicked accuse multiple times for one win, you could also cheat your score.  I disabled the accuse button after the win sequence had run once by using a true false variable.
+7. I designed a win and lose sequence with cell bars, a villain and sound effects.  
+  - A bug I had was that you could move on to the next suspect before the sequence had finished which made the CCTV camera sequence out of sync with the selectors being disabled - a frustrating user experience.
+    - I disabled the next suspect button while the sequence was playing.
+  - I also realised as my score function relied on how many times the win sequence ran, if you clicked accuse multiple times for one win, you could also cheat your score.  
+    - I disabled the accuse button after the win sequence had run once by using a true false variable.
 
 8. I wanted to make the game harder and more competitive so I added a timer to see how many times you could win in 90 seconds.  I also needed to add a timer within the CSS and HTML which I designed on Canva and placed on the page through CSS.
 
-9. Finally I made the game mobile responsive.
-
-10. As part of the mobile responsiveness, I had to add a scroll animation so that when you click on the instructions button, you automatically scroll to the bottom of the page.  
+9. Finally I made the game mobile responsive. As part of the mobile responsiveness, I had to add a scroll animation so that when you click on the instructions button, you automatically scroll to the bottom of the page.  After the course I would like to include the mobile responsiveness of the game. Currently it relies on a desktop screen as there is too much going on to fit on a mobile screen. I would improve this by having multiple pages that the app flipped between so that the user was only shown the relevant parts to them at that moment.
 
 # Wins
 
